@@ -32,6 +32,9 @@ class ofApp : public ofBaseApp{
     int x_size;
     int y_size;
     
+    
+    float movSpeed = 1;
+    
     float mult = 1;
     
     
@@ -48,7 +51,7 @@ class ofApp : public ofBaseApp{
         
         //init mask
         
-        mask.loadImage("mask.png");
+        mask.loadImage("mask_5k.png");
         
         
         x_pos = (ofGetWidth() - mask.getWidth())/2.0;
@@ -74,7 +77,7 @@ class ofApp : public ofBaseApp{
     }
     
     void mouseMovedDhrama(int x, int y){
-        mult = ofMap(mouseX, 0, 1024, 0.5, 40);
+        mult = ofMap(mouseX, 0, 1024, 0.2, 6);
         
         x_pos = (ofGetWidth() - mask.getWidth() *mult)/2.0;
         y_pos = (ofGetHeight() - mask.getHeight()*mult)/2.0;
@@ -95,10 +98,10 @@ class ofApp : public ofBaseApp{
     void drawExporter(){
         if (movieExporter.isRecording())
         {
-            ofSetColor(255, 0, 0);
-            ofDrawBitmapString("Press space to stop recording", 10, 15);
+//            ofSetColor(255, 0, 0);
+//            ofDrawBitmapString("Press space to stop recording", 10, 15);
         }
-        else ofDrawBitmapString("Press space to start recording", 10, 15);
+//        else ofDrawBitmapString("Press space to start recording", 10, 15);
 
     }
     
@@ -110,8 +113,16 @@ class ofApp : public ofBaseApp{
                 if (movieExporter.isRecording()) movieExporter.stop();
                 else movieExporter.record();
                 break;
+                
+            case '1':
+                movSpeed -= 0.1;
+                break;
+            case '2':
+                movSpeed += 0.1;
+                break;
         }
-        
+        mov1.setSpeed(movSpeed);
+        ofLog() << "video speed: " << movSpeed;
     }
     
     
