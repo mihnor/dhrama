@@ -3,6 +3,12 @@
 #include "ofMain.h"
 #include "ofxMtlMapping2D.h"
 #include "ofxMovieExporter.h"
+#include "ofxAnimatableFloat.h"
+
+//#define TIME_SAMPLE
+#ifdef TIME_SAMPLE
+#include "ofxTimeMeasurements.h"
+#endif
 
 class ofApp : public ofBaseApp{
 
@@ -22,6 +28,50 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     
+    //ANIMATABLE
+    
+    ofxAnimatableFloat pos;
+    
+    float width;
+    float fr;
+    int xMargin = 0;
+    int widthCol = 1024;
+    int timeExpansion = 5;
+    int timePeriod = 20;
+    int timeContraction = 1;
+    
+    void updateAnimatable(){
+
+        float dt = 1.0f / 60.0f;
+        pos.update( dt );
+        
+    }
+    
+    void resetup(){
+        ofSetFrameRate(60);
+        ofEnableSmoothing();
+        ofEnableAlphaBlending();
+        ofSetVerticalSync(true);
+#ifdef TIME_SAMPLE
+        TIME_SAMPLE_SET_FRAMERATE(60);
+        TIME_SAMPLE_SET_PRECISION(3);
+        TIME_SAMPLE_SET_AVERAGE_RATE(0.01);
+        TIME_SAMPLE_SET_DRAW_LOCATION(TIME_MEASUREMENTS_BOTTOM_RIGHT);
+        TIME_SAMPLE_DISABLE();
+#endif
+        width = 10;
+        
+        
+        for ( int i = 0; i < 1; i++ ){
+            pos.animateFromTo( xMargin, xMargin + widthCol );
+            pos.setDuration(timeExpansion);
+            pos.setRepeatType( LOOP );
+            AnimCurve curve = (AnimCurve) (EASE_IN_EASE_OUT );
+            pos.setCurve( curve );
+        }
+    }
+
+
     //DHRAMA MASK
     ofImage mask;
     ofVideoPlayer mov1;
@@ -44,7 +94,7 @@ class ofApp : public ofBaseApp{
         
         //init video
         ofSetVerticalSync(true);
-        mov1.loadMovie("mov2_1024.mp4");
+        mov1.loadMovie("mov1_1024.mp4");
         mov1.setLoopState(OF_LOOP_NORMAL);
         mov1.setVolume(0);
         mov1.play();
@@ -76,8 +126,8 @@ class ofApp : public ofBaseApp{
         
     }
     
-    void mouseMovedDhrama(int x, int y){
-        mult = ofMap(mouseX, 0, 1024, 0.2, 6);
+    void mouseMovedDhrama(){
+        mult = ofMap(pos.val(), 0, 1024, 0.2, 6);
         
         x_pos = (ofGetWidth() - mask.getWidth() *mult)/2.0;
         y_pos = (ofGetHeight() - mask.getHeight()*mult)/2.0;
@@ -90,7 +140,6 @@ class ofApp : public ofBaseApp{
     void setupExporter(){
         
         ofSetFrameRate(60);
-        testImage.loadImage("kate-1024-768.jpg");
         movieExporter.setup();
         
     }
@@ -162,6 +211,5 @@ class ofApp : public ofBaseApp{
         ofxMtlMapping2D* _mapping;
     //MOVIE EXPORTER
         Apex::ofxMovieExporter movieExporter;
-        ofImage testImage;
 		
 };

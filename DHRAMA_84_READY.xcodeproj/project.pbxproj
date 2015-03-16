@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		005E77FFDA7FC26A39806FB2 /* ofxMtlMapping2DPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3587FE156ADA22A38C70B7 /* ofxMtlMapping2DPolygon.cpp */; };
+		18617D461AB74B2C00685B2C /* ofxAnimatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18617D3E1AB74B2C00685B2C /* ofxAnimatable.cpp */; };
+		18617D471AB74B2C00685B2C /* ofxAnimatableFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18617D401AB74B2C00685B2C /* ofxAnimatableFloat.cpp */; };
+		18617D481AB74B2C00685B2C /* ofxAnimatableOfColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18617D421AB74B2C00685B2C /* ofxAnimatableOfColor.cpp */; };
+		18617D491AB74B2C00685B2C /* ofxAnimatableOfPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18617D441AB74B2C00685B2C /* ofxAnimatableOfPoint.cpp */; };
 		18B0E2021AB5CB0500672F31 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18B0E1FB1AB5CB0500672F31 /* ofxXmlSettings.cpp */; };
 		18B0E2031AB5CB0500672F31 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18B0E1FE1AB5CB0500672F31 /* tinyxml.cpp */; };
 		18B0E2041AB5CB0500672F31 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18B0E2001AB5CB0500672F31 /* tinyxmlerror.cpp */; };
@@ -127,6 +131,14 @@
 		113720A680B37856AABBCBA2 /* dict.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dict.h; path = ../../../addons/ofxMovieExporter/libs/libav/include/libavutil/dict.h; sourceTree = SOURCE_ROOT; };
 		13D35596D2C18EFBDB3DBC0E /* dxva2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dxva2.h; path = ../../../addons/ofxMovieExporter/libs/libav/include/libavcodec/dxva2.h; sourceTree = SOURCE_ROOT; };
 		176127482F190AA1AEBCC93C /* ofxMtlMapping2DControls.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMtlMapping2DControls.cpp; path = ../../../addons/ofxMtlMapping2D/src/controls/ofxMtlMapping2DControls.cpp; sourceTree = SOURCE_ROOT; };
+		18617D3E1AB74B2C00685B2C /* ofxAnimatable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatable.cpp; sourceTree = "<group>"; };
+		18617D3F1AB74B2C00685B2C /* ofxAnimatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxAnimatable.h; sourceTree = "<group>"; };
+		18617D401AB74B2C00685B2C /* ofxAnimatableFloat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableFloat.cpp; sourceTree = "<group>"; };
+		18617D411AB74B2C00685B2C /* ofxAnimatableFloat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableFloat.h; sourceTree = "<group>"; };
+		18617D421AB74B2C00685B2C /* ofxAnimatableOfColor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableOfColor.cpp; sourceTree = "<group>"; };
+		18617D431AB74B2C00685B2C /* ofxAnimatableOfColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableOfColor.h; sourceTree = "<group>"; };
+		18617D441AB74B2C00685B2C /* ofxAnimatableOfPoint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAnimatableOfPoint.cpp; sourceTree = "<group>"; };
+		18617D451AB74B2C00685B2C /* ofxAnimatableOfPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxAnimatableOfPoint.h; sourceTree = "<group>"; };
 		18B0E1FB1AB5CB0500672F31 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		18B0E1FC1AB5CB0500672F31 /* ofxXmlSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		18B0E1FE1AB5CB0500672F31 /* tinyxml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
@@ -383,6 +395,30 @@
 				5F9D06A2FE575F7769246794 /* postprocess.h */,
 			);
 			name = libpostproc;
+			sourceTree = "<group>";
+		};
+		18617D3C1AB74B2C00685B2C /* ofxAnimatable */ = {
+			isa = PBXGroup;
+			children = (
+				18617D3D1AB74B2C00685B2C /* src */,
+			);
+			name = ofxAnimatable;
+			sourceTree = "<group>";
+		};
+		18617D3D1AB74B2C00685B2C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				18617D3E1AB74B2C00685B2C /* ofxAnimatable.cpp */,
+				18617D3F1AB74B2C00685B2C /* ofxAnimatable.h */,
+				18617D401AB74B2C00685B2C /* ofxAnimatableFloat.cpp */,
+				18617D411AB74B2C00685B2C /* ofxAnimatableFloat.h */,
+				18617D421AB74B2C00685B2C /* ofxAnimatableOfColor.cpp */,
+				18617D431AB74B2C00685B2C /* ofxAnimatableOfColor.h */,
+				18617D441AB74B2C00685B2C /* ofxAnimatableOfPoint.cpp */,
+				18617D451AB74B2C00685B2C /* ofxAnimatableOfPoint.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxAnimatable/src;
 			sourceTree = "<group>";
 		};
 		18B0E1F91AB5CB0500672F31 /* ofxXmlSettings */ = {
@@ -707,6 +743,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				18617D3C1AB74B2C00685B2C /* ofxAnimatable */,
 				18B0E2921AB5CB3D00672F31 /* ofxMSAInteractiveObject */,
 				18B0E2061AB5CB0F00672F31 /* ofxUI */,
 				18B0E1F91AB5CB0500672F31 /* ofxXmlSettings */,
@@ -960,6 +997,7 @@
 				18B0E27F1AB5CB0F00672F31 /* ofxUIRadio.cpp in Sources */,
 				B111BE7D309D33D83E46510D /* ofxMtlMapping2DInput.cpp in Sources */,
 				18B0E2821AB5CB0F00672F31 /* ofxUIRotarySlider.cpp in Sources */,
+				18617D481AB74B2C00685B2C /* ofxAnimatableOfColor.cpp in Sources */,
 				18B0E26B1AB5CB0F00672F31 /* ofxUICanvas.cpp in Sources */,
 				18B0E2771AB5CB0F00672F31 /* ofxUILabel.cpp in Sources */,
 				18B0E2871AB5CB0F00672F31 /* ofxUISpectrum.cpp in Sources */,
@@ -975,6 +1013,7 @@
 				18B0E2801AB5CB0F00672F31 /* ofxUIRangeSlider.cpp in Sources */,
 				18B0E26A1AB5CB0F00672F31 /* ofxUIButton.cpp in Sources */,
 				18B0E26F1AB5CB0F00672F31 /* ofxUIEventArgs.cpp in Sources */,
+				18617D471AB74B2C00685B2C /* ofxAnimatableFloat.cpp in Sources */,
 				18B0E27A1AB5CB0F00672F31 /* ofxUIMinimalSlider.cpp in Sources */,
 				18B0E2761AB5CB0F00672F31 /* ofxUIImageToggle.cpp in Sources */,
 				18B0E2041AB5CB0500672F31 /* tinyxmlerror.cpp in Sources */,
@@ -985,6 +1024,7 @@
 				18B0E2841AB5CB0F00672F31 /* ofxUISlider.cpp in Sources */,
 				18B0E2031AB5CB0500672F31 /* tinyxml.cpp in Sources */,
 				18B0E2691AB5CB0F00672F31 /* ofxUIBiLabelSlider.cpp in Sources */,
+				18617D461AB74B2C00685B2C /* ofxAnimatable.cpp in Sources */,
 				3244E5049D3DACBE7B2A8E30 /* ofxMtlMapping2DShape.cpp in Sources */,
 				42C085D818A6A913503322F3 /* ofxMtlMapping2DTriangle.cpp in Sources */,
 				18B0E2711AB5CB0F00672F31 /* ofxUIFPSSlider.cpp in Sources */,
@@ -993,6 +1033,7 @@
 				18B0E27B1AB5CB0F00672F31 /* ofxUIMovingGraph.cpp in Sources */,
 				762009780D236F550729D23B /* ofxMtlMapping2DVertex.cpp in Sources */,
 				18B0E2901AB5CB0F00672F31 /* ofxUIWidget.cpp in Sources */,
+				18617D491AB74B2C00685B2C /* ofxAnimatableOfPoint.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

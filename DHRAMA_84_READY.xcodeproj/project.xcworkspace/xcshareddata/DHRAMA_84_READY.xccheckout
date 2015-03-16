@@ -14,6 +14,8 @@
 		<string>https://github.com/morethanlogic/ofxMtlMapping2D.git</string>
 		<key>328B2D9D97956D43F1C477558678A6865720047A</key>
 		<string>https://github.com/memo/ofxMSAInteractiveObject.git</string>
+		<key>32C9357E6BFA4C30CF0000521A92DF84B7FBC79F</key>
+		<string>https://github.com/armadillu/ofxAnimatable.git</string>
 		<key>3F5939A09B1D33598146B202DE53FE9F84C793D7</key>
 		<string>https://github.com/neilmendoza/ofxMovieExporter.git</string>
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
@@ -26,13 +28,15 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2F210AAA7F2F62519159C75080507D92C1F929CB</key>
-		<string>../../../../../addons/ofxMtlMapping2D</string>
+		<string>../../../addons/ofxMtlMapping2D</string>
 		<key>328B2D9D97956D43F1C477558678A6865720047A</key>
-		<string>../../../../../addons/ofxMSAInteractiveObject</string>
+		<string>../../../addons/ofxMSAInteractiveObject</string>
+		<key>32C9357E6BFA4C30CF0000521A92DF84B7FBC79F</key>
+		<string>../../../../../addons/ofxAnimatable</string>
 		<key>3F5939A09B1D33598146B202DE53FE9F84C793D7</key>
-		<string>../../../../../addons/ofxMovieExporter</string>
+		<string>../../../addons/ofxMovieExporter</string>
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
-		<string>../../../../../addons/ofxUI</string>
+		<string>../../../addons/ofxUI</string>
 		<key>9BFC63B978B633920DB897849E083DEFBB7A52AD</key>
 		<string>../..</string>
 	</dict>
@@ -51,6 +55,14 @@
 			<string>9BFC63B978B633920DB897849E083DEFBB7A52AD</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DHRAMA_FULL</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>32C9357E6BFA4C30CF0000521A92DF84B7FBC79F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxAnimatable</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
