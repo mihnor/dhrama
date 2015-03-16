@@ -101,7 +101,7 @@ class ofApp : public ofBaseApp{
         
         //init video
         ofSetVerticalSync(true);
-        mov1.loadMovie("mov3_1024.mp4");
+        mov1.loadMovie("mov2_1024.mp4");
         mov1.setLoopState(OF_LOOP_NORMAL);
         mov1.setVolume(0);
         mov1.play();
