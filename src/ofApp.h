@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
     //ANIMATABLE
     
     ofxAnimatableFloat pos;
-    
+    bool expansion = true;
     float width;
     float fr;
     int xMargin = 0;
@@ -39,6 +39,9 @@ class ofApp : public ofBaseApp{
     int timeExpansion = 5;
     int timePeriod = 20;
     int timeContraction = 1;
+    int typeCurve = SWIFT_GOOGLE;
+    
+    int timeResetup = timeExpansion;
     
     void updateAnimatable(){
 
@@ -47,7 +50,7 @@ class ofApp : public ofBaseApp{
         
     }
     
-    void resetup(){
+    void resetup(int time, int typeCurve){
         ofSetFrameRate(60);
         ofEnableSmoothing();
         ofEnableAlphaBlending();
@@ -63,10 +66,14 @@ class ofApp : public ofBaseApp{
         
         
         for ( int i = 0; i < 1; i++ ){
+            if(expansion==true){
             pos.animateFromTo( xMargin, xMargin + widthCol );
-            pos.setDuration(timeExpansion);
-            pos.setRepeatType( LOOP );
-            AnimCurve curve = (AnimCurve) (EASE_IN_EASE_OUT );
+            }else{
+            pos.animateFromTo( xMargin + widthCol,xMargin  );
+            }
+            pos.setDuration(time);
+            pos.setRepeatType( PLAY_ONCE );
+            AnimCurve curve = (AnimCurve) (typeCurve);
             pos.setCurve( curve );
         }
     }
@@ -94,7 +101,7 @@ class ofApp : public ofBaseApp{
         
         //init video
         ofSetVerticalSync(true);
-        mov1.loadMovie("mov1_1024.mp4");
+        mov1.loadMovie("mov3_1024.mp4");
         mov1.setLoopState(OF_LOOP_NORMAL);
         mov1.setVolume(0);
         mov1.play();
@@ -127,7 +134,12 @@ class ofApp : public ofBaseApp{
     }
     
     void mouseMovedDhrama(){
-        mult = ofMap(pos.val(), 0, 1024, 0.2, 6);
+        if (expansion == true) {
+            mult = ofMap(pos.val(), 0, 1024, 0.2, 6);
+        }else{
+            mult = ofMap(pos.val(), 1024, 0, 6, 0.2);
+        }
+
         
         x_pos = (ofGetWidth() - mask.getWidth() *mult)/2.0;
         y_pos = (ofGetHeight() - mask.getHeight()*mult)/2.0;
@@ -169,6 +181,17 @@ class ofApp : public ofBaseApp{
             case '2':
                 movSpeed += 0.1;
                 break;
+            case 'u':
+                expansion = true;
+                timeResetup = timeExpansion;
+                typeCurve = SWIFT_GOOGLE;
+                break;
+            case 'i':
+                expansion = false;
+                timeResetup = timeContraction;
+                typeCurve = SWIFT_GOOGLE;
+                break;
+                
         }
         mov1.setSpeed(movSpeed);
         ofLog() << "video speed: " << movSpeed;
