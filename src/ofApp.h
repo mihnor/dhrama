@@ -35,8 +35,8 @@ class ofApp : public ofBaseApp{
     float width;
     float fr;
     int xMargin = 0;
-    int widthCol = 1024;
-    int timeExpansion = 5;
+    int widthCol = ofGetWidth();
+    int timeExpansion = 10;
     int timePeriod = 20;
     int timeContraction = 1;
     int typeCurve = SWIFT_GOOGLE;
@@ -80,6 +80,7 @@ class ofApp : public ofBaseApp{
 
 
     //DHRAMA MASK
+    bool isRunning = true;
     ofImage mask;
     ofVideoPlayer mov1;
     ofVideoPlayer mov2;
@@ -96,19 +97,19 @@ class ofApp : public ofBaseApp{
     
     
     void setupDhrama(){
-        
+        isRunning = true;
         ofBackground(0, 0, 0,255);
         
         //init video
         ofSetVerticalSync(true);
-        mov1.loadMovie("mov4_1024.mp4");
+        mov1.loadMovie("movFinal_800.mp4");
         mov1.setLoopState(OF_LOOP_NORMAL);
         mov1.setVolume(0);
         mov1.play();
         
         //init mask
         
-        mask.loadImage("mask_5k.png");
+        mask.loadImage("mask_4k.png");
         
         
         x_pos = (ofGetWidth() - mask.getWidth())/2.0;
@@ -128,8 +129,13 @@ class ofApp : public ofBaseApp{
     void drawDhrama(){
         
         
+        
+        if (isRunning == true){
         mov1.draw(0,0);
         mask.draw(x_pos, y_pos, x_size * mult, y_size * mult);
+        }else{
+            ofBackground(0);
+        }
         
     }
     
@@ -182,6 +188,7 @@ class ofApp : public ofBaseApp{
                 movSpeed += 0.1;
                 break;
             case 'u':
+                isRunning = true;
                 expansion = true;
                 timeResetup = timeExpansion;
                 typeCurve = SWIFT_GOOGLE;
@@ -190,6 +197,9 @@ class ofApp : public ofBaseApp{
                 expansion = false;
                 timeResetup = timeContraction;
                 typeCurve = SWIFT_GOOGLE;
+                break;
+            case 'b':
+                isRunning = false;
                 break;
                 
         }

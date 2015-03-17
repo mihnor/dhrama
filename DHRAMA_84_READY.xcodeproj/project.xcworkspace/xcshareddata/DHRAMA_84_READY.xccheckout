@@ -32,7 +32,7 @@
 		<key>328B2D9D97956D43F1C477558678A6865720047A</key>
 		<string>../../../addons/ofxMSAInteractiveObject</string>
 		<key>32C9357E6BFA4C30CF0000521A92DF84B7FBC79F</key>
-		<string>../../../../../addons/ofxAnimatable</string>
+		<string>../../../addons/ofxAnimatable</string>
 		<key>3F5939A09B1D33598146B202DE53FE9F84C793D7</key>
 		<string>../../../addons/ofxMovieExporter</string>
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
